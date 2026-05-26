@@ -1,12 +1,244 @@
 <!DOCTYPE html>
-     <html lang="en">
-     <head>
-          <meta charset="UTF-8">
-          <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <title>Document</title>
-     </head>
-     <body>
-     <h1>Meu blog tech</h1>
-     <p>Vou compartilhar conhecimentos sobre tecnologia e programação</p>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oficina Premium</title>
+
+<style>
+
+body{
+background-color:#111111;
+font-family:Arial, Helvetica, sans-serif;
+margin:0;
+padding:20px;
+}
+
+header{
+background-color:#1b1b1b;
+color:#ff3c00;
+text-align:center;
+max-width:1000px;
+margin:0 auto;
+padding:20px;
+border:4px solid #ff3c00;
+}
+
+header p{
+color:white;
+}
+
+main{
+background-color:#f4efe6;
+max-width:1000px;
+margin:0 auto;
+padding:20px;
+}
+
+article{
+display:flex;
+gap:30px;
+margin-bottom:40px;
+border-bottom:2px solid #ff3c00;
+padding-bottom:30px;
+}
+
+img{
+width:320px;
+height:320px;
+object-fit:cover;
+border-radius:12px;
+}
+
+.artigo-autor{
+font-weight:bold;
+}
+
+h2{
+font-size:40px;
+}
+
+button{
+padding:10px 15px;
+margin-right:10px;
+margin-top:10px;
+cursor:pointer;
+background-color:#f4efe6;
+border:2px solid #ff3c00;
+color:#000000;
+border-radius:10px;
+transition:0.3s;
+}
+
+button:hover{
+background-color:#ff3c00;
+color:white;
+}
+
+footer{
+background-color:#1b1b1b;
+color:#ff3c00;
+text-align:center;
+max-width:1000px;
+margin:0 auto;
+padding:20px;
+font-size:22px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>🚗 Oficina Premium</h1>
+
+<p>
+Pintura automotiva e reparos profissionais
+</p>
+
+</header>
+
+<main>
+
+<article>
+
+<img src="pintura.jpg"
+alt="Pintura automotiva">
+
+<div>
+
+<h2>Tabela de Preços - Pintura</h2>
+
+<p class="artigo-autor">
+Por: João
+</p>
+
+<p>
+🎨 Pintura de para-choque: R$ 250
+</p>
+
+<p>
+🎨 Pintura de porta: R$ 400
+</p>
+
+<p>
+🎨 Pintura de capô: R$ 600
+</p>
+
+<p>
+🎨 Pintura completa: R$ 3.500
+</p>
+
+<button class="like">👍 <span>0</span></button>
+<button class="deslike">👎 <span>0</span></button>
+
+</div>
+
+</article>
+
+<article>
+
+<img src="reparo.jpg"
+alt="Reparo automotivo">
+
+<div>
+
+<h2>Tabela de Preços - Reparo</h2>
+
+<p class="artigo-autor">
+Por: João
+</p>
+
+<p>
+🔧 Troca de óleo: R$ 120
+</p>
+
+<p>
+🔧 Alinhamento: R$ 80
+</p>
+
+<p>
+🔧 Balanceamento: R$ 70
+</p>
+
+<p>
+🔧 Reparo de motor: A partir de R$ 1.500
+</p>
+
+<button class="like">👍 <span>0</span></button>
+<button class="deslike">👎 <span>0</span></button>
+
+</div>
+
+</article>
+
+</main>
+
+<footer>
+
+🏎️ "Seu carro merece o melhor cuidado."
+
+</footer>
+
+<script>
+
+const likes=document.querySelectorAll(".like");
+const deslikes=document.querySelectorAll(".deslike");
+
+likes.forEach(function(botao){
+
+let curtido=false;
+
+botao.addEventListener("click",function(){
+
+let texto=botao.querySelector("span");
+let numero=Number(texto.textContent);
+
+if(!curtido){
+
+texto.textContent=numero+1;
+curtido=true;
+
+}else{
+
+texto.textContent=numero-1;
+curtido=false;
+
+}
+
+});
+
+});
+
+deslikes.forEach(function(botao){
+
+let descurtido=false;
+
+botao.addEventListener("click",function(){
+
+let texto=botao.querySelector("span");
+let numero=Number(texto.textContent);
+
+if(!descurtido){
+
+texto.textContent=numero+1;
+descurtido=true;
+
+}else{
+
+texto.textContent=numero-1;
+descurtido=false;
+
+}
+
+});
+
+});
+
+</script>
+
 </body>
-     </html>
+</html>
